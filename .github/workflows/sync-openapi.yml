@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install
+      - run: npm install --no-package-lock
 
       - name: Download OpenAPI
         env:
