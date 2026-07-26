@@ -12,6 +12,7 @@
   "files": ["dist", "README.md"],
   "engines": { "node": ">=18" },
   "scripts": {
+    "check:openapi": "node scripts/check-openapi-coverage.mjs",
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "start": "node dist/index.js"

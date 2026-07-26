@@ -1,0 +1,39 @@
+name: Sync OpenAPI
+
+on:
+  repository_dispatch:
+    types: [openapi_updated]
+  workflow_dispatch:
+    inputs:
+      openapi_url:
+        description: OpenAPI JSON URL
+        required: false
+        default: https://pokerai.bet/openapi.en.json
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Download OpenAPI
+        env:
+          DISPATCH_URL: ${{ github.event.client_payload.openapi_url }}
+          INPUT_URL: ${{ inputs.openapi_url }}
+        run: |
+          set -euo pipefail
+          url="${DISPATCH_URL:-${INPUT_URL:-https://pokerai.bet/openapi.en.json}}"
+          curl -fsSL "$url" -o /tmp/pokerai-openapi.json
+
+      - run: npm run check:openapi -- /tmp/pokerai-openapi.json
+      - run: npm run build
