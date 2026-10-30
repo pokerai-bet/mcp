@@ -1,10 +1,11 @@
 {
   "name": "@pokerai/mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for the Pokerai API — solver-grade GTO strategy for 6-max No-Limit Hold'em, as tools for LLM agents (Claude, Cursor, ...).",
   "keywords": ["mcp", "model-context-protocol", "poker", "gto", "solver", "holdem", "nlhe", "pokerai"],
   "homepage": "https://pokerai.bet",
-  "bugs": { "url": "https://pokerai.bet/docs.en" },
+  "repository": { "type": "git", "url": "git+https://github.com/pokerai-bet/mcp.git" },
+  "bugs": { "url": "https://pokerai.bet/contact" },
   "license": "MIT",
   "author": "Pokerai API",
   "type": "module",

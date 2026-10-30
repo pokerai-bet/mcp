@@ -74,4 +74,18 @@ Real-time solver (turn/river) — **off by default** because it spends the scarc
   credential and has no abuse surface of its own.
 - stdout is the MCP protocol channel; the server logs only to stderr.
 
-MIT licensed. Docs: https://pokerai.bet/docs.en · Reference: https://pokerai.bet/reference
+## About Pokerai API
+
+Pokerai API provides solver-grade GTO strategy and poker computation APIs for
+training products, review tools, coaches, researchers, and AI agents.
+
+Free tier: 1,000 presolved lookups + 25 real-time solves per month.
+
+Real-time assistance (RTA) at real-money tables is prohibited.
+
+- Website: https://pokerai.bet/
+- Docs: https://pokerai.bet/docs
+- API reference: https://pokerai.bet/reference
+- OpenAPI: https://pokerai.bet/openapi.en.json
+
+MIT licensed. Docs: https://pokerai.bet/docs · Reference: https://pokerai.bet/reference
