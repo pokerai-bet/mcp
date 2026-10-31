@@ -1,0 +1,52 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pokerai-bet/mcp",
+  "title": "Pokerai API",
+  "description": "Solver-grade GTO strategy for study. Real-time assistance (RTA) at real-money tables is prohibited.",
+  "repository": {
+    "url": "https://github.com/pokerai-bet/mcp",
+    "source": "github"
+  },
+  "version": "0.1.2",
+  "websiteUrl": "https://pokerai.bet/docs",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@pokerai/mcp",
+      "version": "0.1.2",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "POKERAI_API_KEY",
+          "description": "Your Pokerai API key, from https://pokerai.bet/login. Calls spend your own quota.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string",
+          "placeholder": "gto_your_key_here"
+        },
+        {
+          "name": "POKERAI_ENABLE_SOLVE",
+          "description": "Set to 1 to expose the real-time solver tools, which spend the scarce solve quota. Off by default.",
+          "format": "string"
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "website": "https://pokerai.bet/",
+      "docs": "https://pokerai.bet/docs",
+      "api_reference": "https://pokerai.bet/reference",
+      "openapi": "https://pokerai.bet/openapi.en.json",
+      "free_tier": "1,000 presolved lookups + 25 real-time solves per month.",
+      "usage_policy": "Real-time assistance (RTA) at real-money tables is prohibited.",
+      "intended_use": [
+        "training",
+        "study",
+        "research"
+      ]
+    }
+  }
+}

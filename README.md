@@ -50,7 +50,7 @@ Presolved lookups (spend your **presolved** quota — 1000/mo on the free tier):
 | `flop_tree` | flop decision tree (nodes carry tokens) |
 | `flop_node` | strategy at one flop node (with or without a hero hand) |
 
-Real-time solver (turn/river) — **off by default** because it spends the scarce **solve** quota
+Real-time solver (flop/turn/river) — **off by default** because it spends the scarce **solve** quota
 (25/mo on the free tier). Enable with `POKERAI_ENABLE_SOLVE=1`:
 
 | Tool | What it returns |
