@@ -103,7 +103,7 @@ server.registerTool(
   {
     title: "Flop decision tree",
     description:
-      "Starting ranges + every decision node for a flop spot. Each node carries a `node` token to pass to flop_node. Charges 1 presolved quota. Single-street (for turn/river use the solver tools).",
+      "Starting ranges + every decision node for a flop spot. In the response each node has `node`, its path (e.g. root/CHECK), and `token`; pass `token` as the `node` argument of flop_node. Charges 1 presolved quota. Single-street (for turn/river use the solver tools).",
     inputSchema: {
       board: z.string().describe("the 3 flop cards, e.g. '2c2h2s'"),
       pot_type: z.enum(["SRP", "3BET", "4BET", "LIMP"]),
@@ -112,11 +112,19 @@ server.registerTool(
         .describe(
           "roles→positions. SRP: {hero,raiser,caller}; 3BET/4BET: {hero,raiser,three_bettor}; LIMP: {hero,limper} (hero or limper must be BB)",
         ),
+      flop_version: z
+        .string()
+        .optional()
+        .describe(
+          "flop dataset id, same values as preflop_versions; omit for the default dataset (6max). Some boards have no data in the default dataset: the call returns 404 and still charges 1 presolved quota, so retry with a flop_version",
+        ),
     },
   },
-  async ({ board, pot_type, positions }) => {
+  async ({ board, pot_type, positions, flop_version }) => {
     try {
-      return ok(await apiPost("/v1/gto/flop/tree", { board, pot_type, positions }));
+      const body: Record<string, unknown> = { board, pot_type, positions };
+      if (flop_version) body.flop_version = flop_version;
+      return ok(await apiPost("/v1/gto/flop/tree", body));
     } catch (e) {
       return fail(e);
     }

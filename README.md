@@ -47,7 +47,7 @@ Presolved lookups (spend your **presolved** quota — 1000/mo on the free tier):
 | `preflop_versions` | selectable strategy chart sets (free) |
 | `preflop_strategy` | fold/call/raise frequencies for a hand vs an action line |
 | `preflop_range` | the whole 169-hand-type range for a position + line |
-| `flop_tree` | flop decision tree (nodes carry tokens) |
+| `flop_tree` | flop decision tree (nodes carry tokens); optional `flop_version` picks the dataset |
 | `flop_node` | strategy at one flop node (with or without a hero hand) |
 
 Real-time solver (flop/turn/river) — **off by default** because it spends the scarce **solve** quota
