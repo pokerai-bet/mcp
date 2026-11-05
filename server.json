@@ -7,13 +7,13 @@
     "url": "https://github.com/pokerai-bet/mcp",
     "source": "github"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "websiteUrl": "https://pokerai.bet/docs",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@pokerai/mcp",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "transport": {
         "type": "stdio"
       },
@@ -40,7 +40,7 @@
       "docs": "https://pokerai.bet/docs",
       "api_reference": "https://pokerai.bet/reference",
       "openapi": "https://pokerai.bet/openapi.en.json",
-      "free_tier": "1,000 presolved lookups + 25 real-time solves per month.",
+      "free_tier": "10 presolved lookups + 5 real-time solves per month.",
       "usage_policy": "Real-time assistance (RTA) at real-money tables is prohibited.",
       "intended_use": [
         "training",

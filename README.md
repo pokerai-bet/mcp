@@ -40,7 +40,7 @@ claude mcp add pokerai -e POKERAI_API_KEY=gto_your_key_here -- npx -y @pokerai/m
 
 ## Tools
 
-Presolved lookups (spend your **presolved** quota — 1000/mo on the free tier):
+Presolved lookups (spend your **presolved** quota — 10/mo on the free tier):
 
 | Tool | What it returns |
 |------|-----------------|
@@ -51,7 +51,7 @@ Presolved lookups (spend your **presolved** quota — 1000/mo on the free tier):
 | `flop_node` | strategy at one flop node (with or without a hero hand) |
 
 Real-time solver (flop/turn/river) — **off by default** because it spends the scarce **solve** quota
-(25/mo on the free tier). Enable with `POKERAI_ENABLE_SOLVE=1`:
+(5/mo on the free tier). Enable with `POKERAI_ENABLE_SOLVE=1`:
 
 | Tool | What it returns |
 |------|-----------------|
@@ -79,7 +79,7 @@ Real-time solver (flop/turn/river) — **off by default** because it spends the 
 Pokerai API provides solver-grade GTO strategy and poker computation APIs for
 training products, review tools, coaches, researchers, and AI agents.
 
-Free tier: 1,000 presolved lookups + 25 real-time solves per month.
+Free tier: 10 presolved lookups + 5 real-time solves per month.
 
 Real-time assistance (RTA) at real-money tables is prohibited.
 
